@@ -1,0 +1,86 @@
+#:kivy 1.11.1
+
+<MyFloatLayout>:
+	AnchorLayout:
+		anchor_x: "left"
+		anchor_y: "center"
+		RelativeLayout:
+			size_hint: 0.2 , 1
+			BoxLayout:
+				orientation: 'vertical'
+				padding: 0,0,5,0
+				Button:
+					text: "Start"
+					size_hint: 1 , 0.8
+					background_color: 0,1,0,1
+					on_press:
+						root.start()
+				Button:
+					text: "Stop"
+					size_hint: 1 , 0.8
+					background_color: 1,0,0,1
+				Button:
+					text: "Clear"
+					size_hint: 1 , 0.8
+					background_color: 1,1,1,1
+					on_press:
+						root.clear()
+				BoxLayout:
+					orientation: 'vertical'
+					Label:
+						text: "Speed Modes"
+						size_hint: 1 , 0.1
+						background_color: 0,1,1,1
+					BoxLayout:
+						orientation: 'horizontal'
+						Button:
+							text: "L"
+							size_hint: 1 , 0.9
+							background_color: 0,1,1,1
+						Button:
+							text: "M"
+							size_hint: 1 , 0.9
+							background_color: 0,1,1,1
+						Button:
+							text: "H"
+							size_hint: 1 , 0.9
+							background_color: 0,1,1,1
+				BoxLayout:
+					orientation: 'horizontal'
+					Button:
+						text: "<"
+						size_hint: 1 , 1
+						background_color: 0,0,1,1
+					BoxLayout:
+						orientation: 'vertical'
+						Button:
+							text: "^"
+							size_hint: 1 , 0.5
+							background_color: 0,0,1,1
+						Button:
+							text: "v"
+							size_hint: 1 , 0.5
+							background_color: 0,0,1,1
+					Button:
+						text: ">"
+						size_hint: 1 , 1
+						shape: "circle"
+						background_color: 0,0,1,1
+				
+	AnchorLayout:
+		anchor_x: "right"
+		anchor_y: "center"
+		RelativeLayout:
+			size_hint: 0.8 , 1
+			Label:
+				canvas:
+					Rectangle:
+						size: self.size
+				on_touch_down:
+					root.down(args[1])
+				on_touch_move:
+					root.move(args[1])
+				on_touch_up:
+					root.up(args[1])
+				text: "Draw the Path"
+	
