@@ -20,9 +20,8 @@ def dist_ang_calctor(data, offset_angle):            # n-points has n-1 edges an
     dist_angl = []
     for i in range(len(data)-1):
         dist_angl.append(euc_dist(data[i],data[i+1]))
-        if i <= len(in_data)-3
+        if i <= (len(in_data)-3):
             dist_angl.append(ang_calc(data[i],data[i+1],data[i+2]))
-
 
     return dist_angl
 
