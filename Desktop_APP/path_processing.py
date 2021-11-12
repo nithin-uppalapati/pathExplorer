@@ -16,11 +16,12 @@ def ang_calc(a,b,c):          # have to use complex numbers to do the sign angle
     return res
 
 
-def dist_ang_calctor(data_points, offset_angle):            # n-points has n-1 edges and n-2 turns
+def dist_ang_calctor(data, offset_angle):            # n-points has n-1 edges and n-2 turns
     dist_angl = []
-
-    for i in range(len(in_data)-1):
-        dist_angl.append()
+    for i in range(len(data)-1):
+        dist_angl.append(euc_dist(data[i],data[i+1]))
+        if i <= len(in_data)-3
+            dist_angl.append(ang_calc(data[i],data[i+1],data[i+2]))
 
 
     return dist_angl
