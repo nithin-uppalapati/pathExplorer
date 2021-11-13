@@ -1,40 +1,12 @@
 import kivy
-import polyprox
-import rdp
-import time
 # kivy.require('1.11.1')
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.graphics import Line , Color
 import numpy as np
 
-import matplotlib.pyplot as plt
-
 first = 1
 cordinates = []
-
-def approximation(z):
-    V = []
-    for i in range(0, len(z)):
-        if (i%2)==0:
-            V.append([z[i],z[i+1]])
-
-    V=np.array(V)
-    G=V.copy()
-    epsilon = 50.0
-    t_start = time.time()
-    G_pp = polyprox.min_num(G, epsilon)
-    t_exec_pp = time.time() - t_start
-    t_start = time.time()
-    G_rdp = rdp.rdp(G, epsilon)
-    t_exec_rdp = time.time() - t_start
-
-    plt.plot(G[:, 0], G[:, 1], label="Groundtruth")
-    plt.plot(G_pp[:, 0], G_pp[:, 1], "g--o", label="Approximation")
-    # plt.scatter(G[:, 0], G[:, 1], label="Groundtruth")
-    plt.show()
-
-    return G_pp
 
 def euc_dist(a,b):
     res = (a[0]-b[0])**2 + (a[1]-b[1])**2
@@ -52,11 +24,20 @@ def ang_calc(a,b,c):          # have to use complex numbers to do the sign angle
     return res
 
 
-def dist_ang_calctor(data, offset_angle):            # n-points has n-1 edges and n-2 turns
+def dist_ang_calctor(dataxy, offset_angle):            # n-points has n-1 edges and n-2 turns
     dist_angl = []
+    data = []
+    j = 0
+    gf = []
+    while j<len(dataxy):
+        gf = []
+        gf.append(dataxy[j])
+        gf.append(dataxy[j+1])
+        data.append(gf)
+        j = j + 2
     for i in range(len(data)-1):
         dist_angl.append(euc_dist(data[i],data[i+1]))
-        if i <= len(data)-3 :
+        if i <= len(in_data)-3
             dist_angl.append(ang_calc(data[i],data[i+1],data[i+2]))
 
 
@@ -69,9 +50,7 @@ def chill():
 class MyFloatLayout(FloatLayout):
     # first = 1
     def start(self):
-        cord = approximation(cordinates)
-        res = dist_ang_calctor(cord,0)
-        print("len and angles")
+        res = dist_ang_calctor(cordinates,0)
         print(res)
     def down(self,touch):
         print("first",first)
