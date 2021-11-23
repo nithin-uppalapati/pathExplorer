@@ -16,56 +16,83 @@
 					on_press:
 						root.start()
 				Button:
+					text: "Aprx Path Gen."
+					size_hint: 1 , 0.8
+					background_color: 1,0.6,0,1
+					on_press:
+						root.testing()
+
+				Button:
 					text: "Stop"
 					size_hint: 1 , 0.8
 					background_color: 1,0,0,1
+					on_press:
+						root.stop()
 				Button:
 					text: "Clear"
 					size_hint: 1 , 0.8
 					background_color: 1,1,1,1
 					on_press:
 						root.clear()
+
+				Button:
+					text: "Manual"
+					size_hint: 1 , 0.8
+					background_color: 1, .3, .4, .85
+					on_press:
+						root.manualset()
 				BoxLayout:
 					orientation: 'vertical'
 					Label:
-						text: "Speed Modes"
+						text: "Speed Control"
 						size_hint: 1 , 0.1
 						background_color: 0,1,1,1
 					BoxLayout:
 						orientation: 'horizontal'
-						Button:
-							text: "L"
+						Slider:
+							min: 0
+							max: 100
+							value: 50
+							step: 1
 							size_hint: 1 , 0.9
-							background_color: 0,1,1,1
-						Button:
-							text: "M"
-							size_hint: 1 , 0.9
-							background_color: 0,1,1,1
-						Button:
-							text: "H"
-							size_hint: 1 , 0.9
-							background_color: 0,1,1,1
+							on_value: root.slide(*args)
 				BoxLayout:
 					orientation: 'horizontal'
 					Button:
 						text: "<"
 						size_hint: 1 , 1
 						background_color: 0,0,1,1
+						on_press:
+							root.left()
+						on_release:
+							root.buttonrelease()
 					BoxLayout:
 						orientation: 'vertical'
 						Button:
 							text: "^"
 							size_hint: 1 , 0.5
 							background_color: 0,0,1,1
+							on_press:
+								root.top()
+							on_release:
+								root.buttonrelease()
 						Button:
 							text: "v"
 							size_hint: 1 , 0.5
 							background_color: 0,0,1,1
+							on_press:
+								root.botm()
+							on_release:
+								root.buttonrelease()
 					Button:
 						text: ">"
 						size_hint: 1 , 1
 						shape: "circle"
 						background_color: 0,0,1,1
+						on_press:
+							root.right()
+						on_release:
+							root.buttonrelease()
 				
 	AnchorLayout:
 		anchor_x: "right"
