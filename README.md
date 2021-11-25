@@ -17,3 +17,9 @@ More VIDEOS available in YouTube Playlist, please check them.
 Link to Youtube Playlist:
 
 https://youtube.com/playlist?list=PL-M9s4MhWbnSIu-q1vE16PTl7EcQsCjpp
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Schematic
+
+[embed]https://github.com/nithin-uppalapati/pathExplorer/blob/main/iot_proj_schematic_pdf.pdf[/embed]
