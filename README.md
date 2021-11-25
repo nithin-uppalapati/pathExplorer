@@ -22,4 +22,4 @@ https://youtube.com/playlist?list=PL-M9s4MhWbnSIu-q1vE16PTl7EcQsCjpp
 
 Schematic
 
-[embed]https://github.com/nithin-uppalapati/pathExplorer/blob/main/iot_proj_schematic_pdf.pdf[/embed]
+[embed] https://github.com/nithin-uppalapati/pathExplorer/blob/main/iot_proj_schematic_pdf.pdf [/embed]
