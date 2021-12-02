@@ -22,4 +22,4 @@ https://youtube.com/playlist?list=PL-M9s4MhWbnSIu-q1vE16PTl7EcQsCjpp
 
 Schematic:
 
-![image](https://user-images.githubusercontent.com/58553373/143429230-39dc3b0c-eb9b-4f22-9f44-7d9ac203dd9e.png)
+![image](https://user-images.githubusercontent.com/58553373/144361610-a290f16e-f52c-428e-a9b3-c83addcebc2a.png)
